@@ -16,9 +16,9 @@ import com.prongbang.localization.utils.LocaleHelper;
  * Created by prongbang on 10/21/2017 AD.
  */
 
-public class BaseAppCompatPreferenceActivity extends AppCompatPreferenceActivity {
+public class LocalizationAppCompatPreferenceActivity extends AppCompatPreferenceActivity {
 
-    private static final String TAG = BaseAppCompatPreferenceActivity.class.getSimpleName();
+    private static final String TAG = LocalizationAppCompatPreferenceActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

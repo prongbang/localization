@@ -18,7 +18,7 @@ import com.prongbang.localization.utils.LocaleHelper;
  *
  * How to use:
  *
- * public class MyActivity extends BaseAppCompatActivity {
+ * public class MyActivity extends LocalizationAppCompatActivity {
  *
  *      @Override
  *      public void onConfigurationChanged(Configuration newConfig) {
@@ -62,9 +62,9 @@ import com.prongbang.localization.utils.LocaleHelper;
  *
  */
 
-public class BaseAppCompatActivity extends AppCompatActivity {
+public class LocalizationAppCompatActivity extends AppCompatActivity {
 
-    private final static String TAG = BaseAppCompatActivity.class.getSimpleName();
+    private final static String TAG = LocalizationAppCompatActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

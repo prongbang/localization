@@ -8,11 +8,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.prongbang.localization.base.BaseAppCompatActivity;
+import com.prongbang.localization.base.LocalizationAppCompatActivity;
 import com.prongbang.localization.utils.LocaleHelper;
 import com.prongbang.localizedapp.views.SettingActivity;
 
-public class MainActivity extends BaseAppCompatActivity {
+public class MainActivity extends LocalizationAppCompatActivity {
 
     private String TAG = MainActivity.class.getSimpleName();
 

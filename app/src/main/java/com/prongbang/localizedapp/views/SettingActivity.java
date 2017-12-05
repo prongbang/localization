@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 
-import com.prongbang.localization.base.BaseAppCompatActivity;
+import com.prongbang.localization.base.LocalizationAppCompatActivity;
 import com.prongbang.localization.utils.LocaleHelper;
 import com.prongbang.localizedapp.R;
 
-public class SettingActivity extends BaseAppCompatActivity {
+public class SettingActivity extends LocalizationAppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

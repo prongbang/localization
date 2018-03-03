@@ -18,7 +18,7 @@ public class MainActivity extends LocalizationAppCompatActivity {
 
     private ImageView ivSetting;
 
-    private boolean USE_EXAMPLE_2 = true;
+    private boolean USE_EXAMPLE_2 = false;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -28,19 +28,9 @@ public class MainActivity extends LocalizationAppCompatActivity {
         // Ex2
         if (USE_EXAMPLE_2) {
             // bind view
-            ivSetting = findViewById(R.id.ivSetting);
-            ivSetting.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(MainActivity.this, SettingActivity.class);
-                    startActivity(intent);
-                }
-            });
+            bindSetting();
         }
     }
-
-    // Ex1
-    private String swip = LocaleHelper.THAI;
 
     @Override
     public void setContentView(@LayoutRes final int layoutResID) {
@@ -49,20 +39,21 @@ public class MainActivity extends LocalizationAppCompatActivity {
         if (!USE_EXAMPLE_2) {
 
             // bind view
-            ivSetting = findViewById(R.id.ivSetting);
-            ivSetting.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    LocaleHelper.changeLocale(getApplicationContext(), swip);
-                    LocaleHelper.sendBroadcast(getApplicationContext(), LocaleHelper.changeLocale(getApplicationContext(), swip));
-                    swip = swip.equals(LocaleHelper.THAI) ? LocaleHelper.ENGLISH : LocaleHelper.THAI;
-                    Log.i(TAG, "onClick: " + swip);
-                    setContentView(layoutResID);
-                }
-            });
+            bindSetting();
 
             Log.i(TAG, "setContentView: Reload");
         }
+    }
+
+    private void bindSetting() {
+        ivSetting = findViewById(R.id.ivSetting);
+        ivSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

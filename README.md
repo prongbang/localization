@@ -14,12 +14,18 @@ allprojects {
         maven { url 'https://jitpack.io' }
     }
 }
+```
 
-...
+- Support Library
 
-dependencies {
-    compile 'com.github.prongbang:localization:1.0.1'
-}
+```gradle
+implementation 'com.github.prongbang:localization:1.0.1'
+```
+
+- AndroidX
+
+```gradle
+implementation 'com.github.prongbang:localization:2.0.0'
 ```
 
 ## How to use

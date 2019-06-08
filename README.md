@@ -48,7 +48,11 @@ AndroidManifest.xml
 <application
         android:name=".MainApplication"
         ...>
-       ...
+       <activity
+            android:name=".MainActivity"
+            android:configChanges="locale">
+           ...
+        </activity>
 </application>
 ```
 

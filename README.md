@@ -29,14 +29,16 @@ implementation 'com.github.prongbang:localization:2.1.0'
 
 ## How to use
 
-MainApplication.kt
+- MainApplication.kt
+
 ```kotlin
 import com.prongbang.localization.LocalizationApplication
 
 class MainApplication : LocalizationApplication()
 ```
 
-MainActivity.kt
+- MainActivity.kt
+
 ```kotlin
 import com.prongbang.localization.LocalizationAppCompatActivity
 
@@ -45,7 +47,8 @@ class MainActivity : LocalizationAppCompatActivity() {
 }
 ```
 
-SettingActivity.kt
+- SettingActivity.kt
+
 ```kotlin
 import com.prongbang.localization.ENGLISH
 import com.prongbang.localization.LocalizationAppCompatActivity

@@ -10,7 +10,6 @@ Supporting multiple languages on your android application.
 ```
 allprojects {
     repositories {
-        ...
         maven { url 'https://jitpack.io' }
     }
 }
@@ -25,144 +24,47 @@ implementation 'com.github.prongbang:localization:1.0.1'
 - AndroidX
 
 ```gradle
-implementation 'com.github.prongbang:localization:2.0.0'
+implementation 'com.github.prongbang:localization:2.1.0'
 ```
 
 ## How to use
 
-MainApplication.java
-```java
-public class MainApplication extends LocalizationApplication {
+MainApplication.kt
+```kotlin
+import com.prongbang.localization.LocalizationApplication
 
-    @Override
-    public void onCreate() {
-        LocaleHelper.changeLocale(getApplicationContext(), LocaleHelper.THAI);
-        super.onCreate();
-    }
-    
+class MainApplication : LocalizationApplication()
+```
+
+MainActivity.kt
+```kotlin
+import com.prongbang.localization.LocalizationAppCompatActivity
+
+class MainActivity : LocalizationAppCompatActivity() {
+
 }
 ```
 
-AndroidManifest.xml
-```xml
-<application
-        android:name=".MainApplication"
-        ...>
-       ...
-</application>
-```
+SettingActivity.kt
+```kotlin
+import com.prongbang.localization.ENGLISH
+import com.prongbang.localization.LocalizationAppCompatActivity
+import com.prongbang.localization.Localize
+import com.prongbang.localization.THAI
 
-Example 1: in Activity
-```java
-public class MainActivity extends LocalizationAppCompatActivity {
+class SettingActivity : LocalizationAppCompatActivity() {
 
-    @Override
-    protected void onCreate(final Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		setContentView(R.layout.activity_setting)
 
-     @Override
-     public void onConfigurationChanged(Configuration newConfig) {
-         super.onConfigurationChanged(newConfig);
-         Log.i(TAG, "onConfigurationChanged: ");
+		tvThai.setOnClickListener { setLocale(Localize.THAI) }
+		tvEnglish.setOnClickListener { setLocale(Localize.ENGLISH) }
+	}
 
-         setContentView(R.layout.activity_main);
-     }
-
-     @Override
-     public void setContentView(@LayoutRes final int layoutResID) {
-         super.setContentView(layoutResID);
-
-         // bind view
-         ivSetting = findViewById(R.id.ivSetting);
-         ivSetting.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 Intent intent = new Intent(MainActivity.this, SettingActivity.class);
-                 startActivity(intent);
-             }
-         });
-
-     }
-
-}
-
-```
-
-
-Example 2: in Activity
-```java
-public class MainActivity extends LocalizationAppCompatActivity {
-
-    @Override
-    protected void onCreate(final Bundle savedInstanceState) {
-         super.onCreate(savedInstanceState);
-         super.setContentView(R.layout.activity_main);
-
-         // bind view
-         ivSetting = findViewById(R.id.ivSetting);
-         ivSetting.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 Intent intent = new Intent(MainActivity.this, SettingActivity.class);
-                 startActivity(intent);
-             }
-         });
-    }
-
-     @Override
-     public void onConfigurationChanged(Configuration newConfig) {
-         super.onConfigurationChanged(newConfig);
-         Log.i(TAG, "onConfigurationChanged: ");
-
-         recreate();
-     }
-
-}
-
-```
-
-SettingActivity
-```java
-public class SettingActivity extends LocalizationAppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting);
-
-        findViewById(R.id.tvThai).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                LocaleHelper.sendBroadcast(getApplicationContext(), LocaleHelper.changeLocale(getApplicationContext(), LocaleHelper.THAI));
-                finishDelay(1000);
-            }
-        });
-
-        findViewById(R.id.tvEnglish).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                LocaleHelper.sendBroadcast(getApplicationContext(), LocaleHelper.changeLocale(getApplicationContext(), LocaleHelper.ENGLISH));
-                finishDelay(1000);
-            }
-        });
-    }
-
-    private void finishDelay(long delayMillis) {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                finish();
-            }
-        }, delayMillis);
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-
-        recreate();
-    }
+	override fun onConfigurationChanged(newConfig: Configuration) {
+		openPrepareLocalize() // used only in setting activity
+		super.onConfigurationChanged(newConfig)
+	}
 }
 ```

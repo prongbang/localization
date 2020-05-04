@@ -6,4 +6,6 @@
 	<string name="select_language">SELECT LANGUAGE</string>
 	<string name="setting">Setting</string>
 	<string name="language">Language: %1$s</string>
+	<string name="feed">Feed</string>
+	<string name="feeds">FEEDS</string>
 </resources>

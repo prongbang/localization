@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Localization.iml" filepath="$PROJECT_DIR$/Localization.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/localization/localization.iml" filepath="$PROJECT_DIR$/localization/localization.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="localization/app" />
+      <module fileurl="file://$PROJECT_DIR$/localization.iml" filepath="$PROJECT_DIR$/localization.iml" group="localization" />
+      <module fileurl="file://$PROJECT_DIR$/localization/localization-localization.iml" filepath="$PROJECT_DIR$/localization/localization-localization.iml" group="localization/localization" />
     </modules>
   </component>
 </project>

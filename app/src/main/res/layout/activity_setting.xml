@@ -1,47 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.prongbang.localizedapp.views.SettingActivity">
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context="com.prongbang.localizedapp.SettingActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
+	<androidx.appcompat.widget.AppCompatTextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/colorLine"
+		android:padding="16dp"
+		android:text="@string/select_language"
+		android:textAppearance="@style/TextAppearance.AppCompat" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center">
+	<TextView
+		android:id="@+id/tvEnglish"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="?attr/selectableItemBackground"
+		android:padding="24dp"
+		android:text="@string/language_english"
+		android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-            <TextView
-                android:id="@+id/tvEnglish"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:text="@string/language_english"
-                android:textSize="30sp" />
-        </LinearLayout>
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="0.5dp"
+		android:background="@color/colorLine" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center">
+	<TextView
+		android:id="@+id/tvThai"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="?attr/selectableItemBackground"
+		android:padding="24dp"
+		android:text="@string/language_thai"
+		android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-            <TextView
-                android:id="@+id/tvThai"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:text="@string/language_thai"
-                android:textSize="30sp" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="0.5dp"
+		android:background="@color/colorLine" />
 </LinearLayout>

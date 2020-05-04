@@ -1,15 +1,9 @@
 <resources>
-    <string name="app_name">Localization</string>
-
-    <!-- Strings related to Settings -->
-
-    <!-- Example General settings -->
-
-    <!-- Example settings for Data & Sync -->
-
-    <!-- Example settings for Notifications -->
-
-    <string name="hello_world">สวัสดีชาวโลก!</string>
-    <string name="language_english">อังกฤษ</string>
-    <string name="language_thai">ไทย</string>
+	<string name="app_name">Localization</string>
+	<string name="hello_world">สวัสดีชาวโลก!</string>
+	<string name="language_english">อังกฤษ</string>
+	<string name="language_thai">ไทย</string>
+	<string name="select_language">เลือกภาษา</string>
+	<string name="setting">การตั้งค่า</string>
+	<string name="language">Language: %1$s</string>
 </resources>

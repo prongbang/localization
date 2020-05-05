@@ -2,11 +2,11 @@ package com.prongbang.localizedapp.feed
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.prongbang.localizedapp.databinding.ActivityFeedBinding
-import kotlinx.android.synthetic.main.item_feed.*
 
 class FeedActivity : AppCompatActivity() {
 
@@ -23,10 +23,18 @@ class FeedActivity : AppCompatActivity() {
 		binding.apply {
 			Glide.with(this@FeedActivity)
 					.load(feed.imageUrl)
-					.into(feedImage)
+					.into(feedView.feedImage)
 			feedView.titleText.text = feed.title
 			feedView.descriptionText.text = feed.description
+			readMoreText.setOnClickListener {
+				navigateToWeb()
+			}
 		}
+	}
+
+	private fun navigateToWeb() {
+		val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://prongbang.github.io"))
+		startActivity(browserIntent)
 	}
 
 	companion object {

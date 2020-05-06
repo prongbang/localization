@@ -37,19 +37,6 @@ import com.prongbang.localization.LocalizationApplication
 class MainApplication : LocalizationApplication()
 ```
 
-- AndroidManifest.xml
-
-```xml
-<application
-    android:name=".MainApplication"/>
-    <activity
-        android:name=".MainActivity"
-        android:configChanges="locale">
-
-    </activity>
-</application>
-```
-
 - MainActivity.kt
 
 ```kotlin

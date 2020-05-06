@@ -27,13 +27,13 @@ class FeedActivity : AppCompatActivity() {
 			feedView.titleText.text = feed.title
 			feedView.descriptionText.text = feed.description
 			readMoreText.setOnClickListener {
-				navigateToWeb()
+				navigateToWeb(feed.url)
 			}
 		}
 	}
 
-	private fun navigateToWeb() {
-		val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://prongbang.github.io"))
+	private fun navigateToWeb(url: String) {
+		val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
 		startActivity(browserIntent)
 	}
 

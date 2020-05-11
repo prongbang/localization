@@ -24,7 +24,7 @@ implementation 'com.github.prongbang:localization:1.0.1'
 - AndroidX
 
 ```gradle
-implementation 'com.github.prongbang:localization:2.1.0'
+implementation 'com.github.prongbang:localization:2.1.1'
 ```
 
 ## How to use

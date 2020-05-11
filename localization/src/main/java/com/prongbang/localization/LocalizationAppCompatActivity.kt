@@ -36,8 +36,7 @@ open class LocalizationAppCompatActivity : AppCompatActivity(), LocalizationMana
 	}
 
 	override fun setLocale(locale: Locale) {
-		val configuration = LocalizeManager.changeLocale(this, locale)
-		LocalizeManager.sendBroadcast(this, configuration)
+		LocalizeManager.setLocale(this, locale)
 	}
 
 	override fun onConfigurationChanged(newConfig: Configuration) {

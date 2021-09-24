@@ -15,16 +15,16 @@ allprojects {
 }
 ```
 
-- Support Library
-
-```gradle
-implementation 'com.github.prongbang:localization:1.0.1'
-```
-
 - AndroidX
 
 ```gradle
 implementation 'com.github.prongbang:localization:2.1.2'
+```
+
+- Support Library
+
+```gradle
+implementation 'com.github.prongbang:localization:1.0.1'
 ```
 
 ## How to use
@@ -51,9 +51,9 @@ class MainActivity : LocalizationAppCompatActivity() {
 
 ```kotlin
 import com.prongbang.localization.ENGLISH
+import com.prongbang.localization.THAI
 import com.prongbang.localization.LocalizationAppCompatActivity
 import com.prongbang.localization.Localize
-import com.prongbang.localization.THAI
 
 class SettingActivity : LocalizationAppCompatActivity() {
 
@@ -61,8 +61,8 @@ class SettingActivity : LocalizationAppCompatActivity() {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_setting)
 
-		tvThai.setOnClickListener { setLocale(Localize.THAI) }
-		tvEnglish.setOnClickListener { setLocale(Localize.ENGLISH) }
+		thaiButton.setOnClickListener { setLocale(Localize.THAI) }
+		englishButton.setOnClickListener { setLocale(Localize.ENGLISH) }
 	}
 
 	override fun onConfigurationChanged(newConfig: Configuration) {

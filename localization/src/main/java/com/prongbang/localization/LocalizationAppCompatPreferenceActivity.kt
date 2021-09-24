@@ -10,16 +10,16 @@ import android.os.Handler
 import com.prongbang.localization.LocalizeManager.getConfigurationChanged
 import java.util.*
 
+@Deprecated("Deprecated Use the AndroidX Preference Library for consistent behavior across all devices")
 class LocalizationAppCompatPreferenceActivity : AppCompatPreferenceActivity(), LocalizationManager {
 
-	override fun onCreate(savedInstanceState: Bundle) {
+	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		registerReceiver(broadcastReceiver, IntentFilter(LocalizeConstant.ON_LOCALE_CHANGED_ACTION))
 	}
 
 	override fun attachBaseContext(base: Context) {
-		super.attachBaseContext(
-				LocalizeManager.onAttach(base))
+		super.attachBaseContext(LocalizeManager.onAttach(base))
 	}
 
 	public override fun onDestroy() {

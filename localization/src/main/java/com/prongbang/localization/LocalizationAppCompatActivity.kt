@@ -7,6 +7,7 @@ import android.content.IntentFilter
 import android.content.res.Configuration
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.prongbang.localization.LocalizeManager.getConfigurationChanged
 import java.util.*
@@ -41,7 +42,7 @@ open class LocalizationAppCompatActivity : AppCompatActivity(), LocalizationMana
 
 	override fun onConfigurationChanged(newConfig: Configuration) {
 		super.onConfigurationChanged(newConfig)
-		Handler().postDelayed({ recreate() }, LocalizeConstant.PREPARE_DELAY)
+		Handler(Looper.getMainLooper()).postDelayed({ recreate() }, LocalizeConstant.PREPARE_DELAY)
 	}
 
 	open fun openPrepareLocalize() {

@@ -8,16 +8,22 @@ import com.prongbang.localization.ENGLISH
 import com.prongbang.localization.LocalizationAppCompatActivity
 import com.prongbang.localization.Localize
 import com.prongbang.localization.THAI
-import kotlinx.android.synthetic.main.activity_setting.*
+import com.prongbang.localizedapp.databinding.ActivitySettingBinding
 
 class SettingActivity : LocalizationAppCompatActivity() {
 
+	private val binding: ActivitySettingBinding by lazy {
+		ActivitySettingBinding.inflate(layoutInflater)
+	}
+
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		setContentView(R.layout.activity_setting)
+		setContentView(binding.root)
 
-		tvThai.setOnClickListener { setLocale(Localize.THAI) }
-		tvEnglish.setOnClickListener { setLocale(Localize.ENGLISH) }
+		binding.apply {
+			tvThai.setOnClickListener { setLocale(Localize.THAI) }
+			tvEnglish.setOnClickListener { setLocale(Localize.ENGLISH) }
+		}
 	}
 
 	override fun onConfigurationChanged(newConfig: Configuration) {

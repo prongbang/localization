@@ -11,7 +11,7 @@ import com.prongbang.localizedapp.databinding.ActivityFeedBinding
 class FeedActivity : AppCompatActivity() {
 
 	private val binding by lazy { ActivityFeedBinding.inflate(layoutInflater) }
-	private val feed by lazy { intent.getParcelableExtra<Feed>(Feed::class.java.simpleName) }
+	private val feed by lazy { intent?.getParcelableExtra(Feed::class.java.simpleName) ?: Feed() }
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)

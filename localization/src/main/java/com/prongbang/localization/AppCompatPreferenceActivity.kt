@@ -15,17 +15,18 @@ import androidx.appcompat.widget.Toolbar
  * A [android.preference.PreferenceActivity] which implements and proxies the necessary calls
  * to be used with AppCompat.
  */
+@Deprecated("Deprecated Use the AndroidX Preference Library for consistent behavior across all devices")
 abstract class AppCompatPreferenceActivity : PreferenceActivity() {
 
 	private var mDelegate: AppCompatDelegate? = null
 
-	override fun onCreate(savedInstanceState: Bundle) {
+	override fun onCreate(savedInstanceState: Bundle?) {
 		delegate.installViewFactory()
 		delegate.onCreate(savedInstanceState)
 		super.onCreate(savedInstanceState)
 	}
 
-	override fun onPostCreate(savedInstanceState: Bundle) {
+	override fun onPostCreate(savedInstanceState: Bundle?) {
 		super.onPostCreate(savedInstanceState)
 		delegate.onPostCreate(savedInstanceState)
 	}

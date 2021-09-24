@@ -6,18 +6,19 @@ import com.prongbang.localization.LocalizationAppCompatActivity
 import com.prongbang.localization.Localize
 import com.prongbang.localization.LocalizeManager
 import com.prongbang.localization.THAI
+import com.prongbang.localizedapp.databinding.ActivityMainBinding
 import com.prongbang.localizedapp.feed.Feed
 import com.prongbang.localizedapp.feed.FeedActivity
 import com.prongbang.localizedapp.feed.FeedAdapter
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : LocalizationAppCompatActivity() {
 
+	private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 	private val feedAdapter by lazy { FeedAdapter() }
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		setContentView(R.layout.activity_main)
+		setContentView(binding.root)
 		initView()
 		initListener()
 	}
@@ -28,7 +29,7 @@ class MainActivity : LocalizationAppCompatActivity() {
 	}
 
 	private fun initView() {
-		feedRecyclerView.apply {
+		binding.feedRecyclerView.apply {
 			adapter = feedAdapter
 		}
 		feedAdapter.apply {
@@ -39,7 +40,7 @@ class MainActivity : LocalizationAppCompatActivity() {
 	}
 
 	private fun initListener() {
-		ivSetting.setOnClickListener {
+		binding.ivSetting.setOnClickListener {
 			SettingActivity.navigate(this)
 		}
 	}

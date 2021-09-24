@@ -30,7 +30,7 @@
 		</activity>
 		<activity
 			android:name=".feed.FeedActivity"
-			android:label="@string/feed">
+			android:label="@string/feeds">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
 				android:value="com.prongbang.localizedapp.MainActivity" />

@@ -3,6 +3,8 @@
 [![](https://jitpack.io/v/prongbang/Localization.svg)](https://jitpack.io/#prongbang/Localization)
 [![](https://jitpack.io/v/prongbang/Localization/month.svg)](https://jitpack.io/#prongbang/Localization)
 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/prongbang)
+
 Supporting multiple languages on your android application.
 
 ![screenshot gif](https://github.com/prongbang/Localization/blob/master/screenshots/screenshots.gif?raw=true)
